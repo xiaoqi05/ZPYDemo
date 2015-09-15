@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+    <include
+        android:id="@+id/ly_toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ly_toolbar"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        >
+
+        <com.rey.material.widget.Button
+            android:id="@+id/bt_1"
+            style="@style/LightRaiseColorButtonRippleStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bt_height"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="锁卡"
+            />
+
+        <com.rey.material.widget.Button
+            android:id="@+id/bt_2"
+            style="@style/LightRaiseColorButtonRippleStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bt_height"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="解卡"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_1"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        >
+
+        <com.rey.material.widget.Button
+            android:id="@+id/bt_3"
+            style="@style/LightRaiseColorButtonRippleStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bt_height"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="个人设置"
+            />
+
+        <com.rey.material.widget.Button
+            android:id="@+id/bt_4"
+            style="@style/LightRaiseColorButtonRippleStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/bt_height"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="查询状态"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

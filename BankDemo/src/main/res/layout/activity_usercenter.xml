@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                tools:context="me.iwf.zpybankdemo.models.UsercenterActivity">
+    <include
+        android:id="@+id/ly_toolbar"
+        layout="@layout/toolbar"
+        />
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/ly_toolbar"
+        android:orientation="vertical"
+        android:padding="15dp"
+        >
+
+        <com.rey.material.widget.EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="全名"
+            app:et_inputId="@+id/et_name_id"
+            app:et_supportMode="none"
+           style="@style/LightEditText"
+            android:paddingBottom="20dp"
+            android:layout_marginTop="15dp"
+            />
+
+        <com.rey.material.widget.EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="手机号"
+            app:et_inputId="@+id/et_phone_id"
+            app:et_supportMode="none"
+            style="@style/LightEditText"
+            android:paddingBottom="20dp"
+            />
+
+
+        <com.rey.material.widget.EditText
+            android:id="@+id/et_card_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="银行卡号"
+            app:et_inputId="@+id/et_card_id"
+            app:et_supportMode="none"
+            style="@style/LightEditText"
+            android:paddingBottom="20dp"
+            />
+        <com.rey.material.widget.Spinner
+            android:id="@+id/spinner_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="128dp"
+            app:spn_label="选择银行"
+            style="@style/LightSpinner"/>
+        
+
+    </LinearLayout>
+    
+    
+    
+
+
+</RelativeLayout>

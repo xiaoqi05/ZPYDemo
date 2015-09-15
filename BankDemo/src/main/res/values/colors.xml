@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorControlNormal">#FF78909C</color>
+    <color name="colorPrimary">#9d8002</color>
+    <color name="colorControlNormalHalf">#9078909C</color>
+</resources>

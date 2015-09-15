@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PhotoPicker Demo</string>
+    <string name="pick_photo">Pick Photo</string>
+    <string name="pick_photo_without_camera">Pick Photo Without Camera</string>
+    <string name="pick_one_photo">Pick Photo</string>
+    <string name="pick_photo_gif">Pick Photos (show gif)</string>
+    <string name="title_activity_guide">GuideActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_usercenter">UsercenterActivity</string>
+</resources>
