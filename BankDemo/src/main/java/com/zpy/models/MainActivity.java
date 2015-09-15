@@ -14,7 +14,9 @@ import android.widget.Toast;
 import com.squareup.okhttp.Request;
 import com.zpy.R;
 import com.zpy.Util.okhttp.OkHttpClientManager;
+import com.zpy.Util.okhttp.Url;
 import com.zpy.adapter.PhotoAdapter;
+import com.zpy.entity.UnionResultBean;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +25,7 @@ import java.util.List;
 
 import me.iwf.libs.PhotoPickerActivity;
 import me.iwf.libs.utils.PhotoPickerIntent;
+
 
 public class MainActivity extends BaseActivity {
 
@@ -40,8 +43,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initToolbar(this,true,"选择图片上传");
-        OkHttpClientManager.getInstance();
+        initToolbar(this, true, "选择图片上传");
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         photoAdapter = new PhotoAdapter(this, selectedPhotos);
 
@@ -95,7 +97,7 @@ public class MainActivity extends BaseActivity {
         File file = new File(selectedPhotos.get(0));
         Toast.makeText(MainActivity.this, "上传图片中", Toast.LENGTH_SHORT).show();
        
-        OkHttpClientManager.postAsyn("http://211.149.197.241:8080/bank/upload.do",//
+        OkHttpClientManager.postAsyn(Url.UPLOAD,
                 new OkHttpClientManager.ResultCallback<String>() {
                     @Override
                     public void onError(Request request, Exception e) {
@@ -107,12 +109,41 @@ public class MainActivity extends BaseActivity {
                         Log.e("path", "成功" + filePath);
                         Toast.makeText(MainActivity.this, "上传成功", Toast.LENGTH_SHORT).show();
                         tv_path.setText("图片地址path：" + filePath);
+                        unLockByHttp();
                     }
                 },//
                 file,//
                 "file"//
-
         );
+    }
+
+    private void unLockByHttp() {
+        /*Map<String ,String> params = new HashMap<>();
+        OkHttpClientManager.postAsyn(Url.UNLOCK, new OkHttpClientManager.ResultCallback<UnionResultBean>() {
+            @Override
+            public void onError(Request request, Exception e) {
+                showLongToast("解锁失败，请重试");
+            }
+
+            @Override
+            public void onResponse(UnionResultBean response) {
+                showLongToast(response.getMessage());
+                finish();
+            }
+        },params);*/
+        
+        OkHttpClientManager.getAsyn(Url.UNLOCK, new OkHttpClientManager.ResultCallback<UnionResultBean>() {
+            @Override
+            public void onError(Request request, Exception e) {
+                showLongToast("解锁失败，请重试");
+            }
+
+            @Override
+            public void onResponse(UnionResultBean response) {
+                showLongToast(response.getMessage());
+            }
+        });
+        
     }
 
   /*  public void byGet() {

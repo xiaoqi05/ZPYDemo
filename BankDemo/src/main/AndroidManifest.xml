@@ -41,6 +41,10 @@
             android:name=".models.UsercenterActivity"
             android:label="@string/title_activity_usercenter" >
         </activity>
+        <activity
+            android:name=".models.CheckActivity"
+            android:label="@string/title_activity_check" >
+        </activity>
     </application>
 
 </manifest>

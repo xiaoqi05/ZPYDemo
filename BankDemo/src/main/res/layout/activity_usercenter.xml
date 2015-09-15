@@ -34,7 +34,7 @@
             android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="phone"
             android:hint="手机号"
             app:et_inputId="@+id/et_phone_id"
             app:et_supportMode="none"
@@ -47,20 +47,64 @@
             android:id="@+id/et_card_num"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="number"
             android:hint="银行卡号"
             app:et_inputId="@+id/et_card_id"
             app:et_supportMode="none"
             style="@style/LightEditText"
             android:paddingBottom="20dp"
+            
             />
         <com.rey.material.widget.Spinner
             android:id="@+id/spinner_label"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            
             android:minWidth="128dp"
             app:spn_label="选择银行"
-            style="@style/LightSpinner"/>
+            style="@style/LightSpinner"
+            />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传图片"
+            android:layout_marginTop="20dp"
+            />
+        
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="12dp"
+            >
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/bg_add_photo"
+                android:id="@+id/iv_photo"
+                android:clickable="true"
+                />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_toRightOf="@id/iv_photo"
+                />
+          
+        </RelativeLayout>
+     
+        <com.rey.material.widget.Button
+            android:id="@+id/bt_commit"
+            style="@style/LightRaiseColorButtonRippleStyle"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:text="提交"
+            android:layout_marginTop="40dp"
+            />
+        
         
 
     </LinearLayout>
